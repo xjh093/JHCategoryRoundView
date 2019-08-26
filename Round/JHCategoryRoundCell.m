@@ -7,6 +7,7 @@
 //
 
 #import "JHCategoryRoundCell.h"
+#import "JHCategoryRoundCellModel.h"
 
 @interface JHCategoryRoundCell()
 @property (nonatomic,  strong) UIImageView *roundView;
@@ -36,6 +37,9 @@
     frame.size.height   +=  inset.top + inset.bottom;
     _roundView.frame = frame;
     _roundView.layer.cornerRadius = CGRectGetHeight(frame)*0.5;
+    
+    JHCategoryRoundCellModel *model = (JHCategoryRoundCellModel *)self.cellModel;
+    _roundView.backgroundColor = model.currentBackgroundColor;
 }
 
 + (UIEdgeInsets)titleLabelPaddingInRoundView{
