@@ -7,6 +7,8 @@
 
 添加了长圆形的背景
 
+![image](https://github.com/xjh093/JHCategoryRoundView/blob/master/image.png)
+
 ---
 
 # Usage
