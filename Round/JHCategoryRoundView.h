@@ -8,6 +8,7 @@
 
 #import "JXCategoryTitleView.h"
 #import "JHCategoryRoundCell.h"
+#import "JHCategoryRoundCellModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
