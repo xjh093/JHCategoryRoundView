@@ -20,7 +20,7 @@
     if (!_titleView) {
         _titleView = [[JHCategoryRoundView alloc] init];
         _titleView.backgroundColor = [UIColor whiteColor];
-        _titleView.titleColorGradientEnabled = YES;
+        _titleView.titleSelectedColor = [UIColor whiteColor];
         _titleView.collectionView.scrollEnabled = YES;
     }
     return _titleView;
