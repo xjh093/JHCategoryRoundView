@@ -9,6 +9,8 @@
 
 ![image](https://github.com/xjh093/JHCategoryRoundView/blob/master/image.png)
 
+![image](https://github.com/xjh093/JHCategoryRoundView/blob/master/image1.png)
+
 ---
 
 # Usage
