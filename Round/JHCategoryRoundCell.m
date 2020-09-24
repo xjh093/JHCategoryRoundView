@@ -42,6 +42,14 @@
     _roundView.backgroundColor = model.currentBackgroundColor;
 }
 
+- (void)reloadData:(JXCategoryBaseCellModel *)cellModel
+{
+    [super reloadData:cellModel];
+    
+    JHCategoryRoundCellModel *model = (JHCategoryRoundCellModel *)cellModel;
+    _roundView.backgroundColor = model.currentBackgroundColor;
+}
+
 + (UIEdgeInsets)titleLabelPaddingInRoundView{
     return UIEdgeInsetsMake(5, 14, 5, 14);
 }
