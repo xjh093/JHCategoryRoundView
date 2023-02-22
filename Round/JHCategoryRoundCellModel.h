@@ -12,9 +12,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JHCategoryRoundCellModel : JXCategoryTitleCellModel
 
-@property (nonatomic,  strong) UIColor *currentBackgroundColor;
+/// 0 - 使用图片, 1 - 使用颜色
+@property (nonatomic,  assign) NSInteger  type;
+
+/// 使用图片作为背景
+@property (nonatomic,  strong) UIImage *normalBackgroundImage;
+@property (nonatomic,  strong) UIImage *selectBackgroundImage;
+
+/// 使用颜色作为背景
 @property (nonatomic,  strong) UIColor *normalBackgroundColor;
-@property (nonatomic,  strong) UIColor *selectedBackgroundColor;
+@property (nonatomic,  strong) UIColor *selectBackgroundColor;
 
 @end
 
