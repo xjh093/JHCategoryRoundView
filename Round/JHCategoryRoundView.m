@@ -29,32 +29,14 @@
     NSMutableArray *tempArray = [NSMutableArray array];
     for (int i = 0; i < self.titles.count; i++) {
         JHCategoryRoundCellModel *cellModel = [[JHCategoryRoundCellModel alloc] init];
+        cellModel.type = _type;
+        cellModel.normalBackgroundImage = _normalBackgroundImage;
+        cellModel.selectBackgroundImage = _selectBackgroundImage;
+        cellModel.normalBackgroundColor = _normalBackgroundColor;
+        cellModel.selectBackgroundColor = _selectBackgroundColor;
         [tempArray addObject:cellModel];
     }
     self.dataSource = tempArray;
-}
-
-- (void)refreshCellModel:(JXCategoryBaseCellModel *)cellModel index:(NSInteger)index {
-    [super refreshCellModel:cellModel index:index];
-    
-    JHCategoryRoundCellModel *model = (JHCategoryRoundCellModel *)cellModel;
-    model.normalBackgroundColor = [UIColor colorWithRed:0.965 green:0.965 blue:0.965 alpha:1];
-    model.selectedBackgroundColor = [UIColor redColor];
-    if (index == self.selectedIndex) {
-        model.currentBackgroundColor = [UIColor redColor];
-    }else{
-        model.currentBackgroundColor = [UIColor colorWithRed:0.965 green:0.965 blue:0.965 alpha:1];
-    }
-}
-
-- (void)refreshSelectedCellModel:(JXCategoryBaseCellModel *)selectedCellModel unselectedCellModel:(JXCategoryBaseCellModel *)unselectedCellModel {
-    [super refreshSelectedCellModel:selectedCellModel unselectedCellModel:unselectedCellModel];
-    
-    JHCategoryRoundCellModel *selectedModel = (JHCategoryRoundCellModel *)selectedCellModel;
-    JHCategoryRoundCellModel *unselectedModel = (JHCategoryRoundCellModel *)unselectedCellModel;
-    
-    selectedModel.currentBackgroundColor = [UIColor redColor];
-    unselectedModel.currentBackgroundColor = [UIColor colorWithRed:0.965 green:0.965 blue:0.965 alpha:1];
 }
 
 @end
