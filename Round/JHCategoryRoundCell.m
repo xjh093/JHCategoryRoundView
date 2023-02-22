@@ -19,7 +19,6 @@
     [super initializeViews];
     
     UIImageView *roundView = [[UIImageView alloc] init];
-    roundView.backgroundColor = [UIColor colorWithRed:0.965 green:0.965 blue:0.965 alpha:1];
     roundView.clipsToBounds = YES;
     [self.contentView addSubview:roundView];
     [self.contentView sendSubviewToBack:roundView];
@@ -37,9 +36,7 @@
     frame.size.height   +=  inset.top + inset.bottom;
     _roundView.frame = frame;
     _roundView.layer.cornerRadius = CGRectGetHeight(frame)*0.5;
-    
-    JHCategoryRoundCellModel *model = (JHCategoryRoundCellModel *)self.cellModel;
-    _roundView.backgroundColor = model.currentBackgroundColor;
+    _roundView.highlighted = self.cellModel.isSelected;
 }
 
 - (void)reloadData:(JXCategoryBaseCellModel *)cellModel
@@ -47,7 +44,15 @@
     [super reloadData:cellModel];
     
     JHCategoryRoundCellModel *model = (JHCategoryRoundCellModel *)cellModel;
-    _roundView.backgroundColor = model.currentBackgroundColor;
+    
+    // 图片
+    if (model.type == 0) {
+        _roundView.image = model.normalBackgroundImage;
+        _roundView.highlightedImage = model.selectBackgroundImage;
+        _roundView.highlighted = cellModel.isSelected;
+    }else if (model.type == 1) {
+        _roundView.backgroundColor = cellModel.isSelected ? model.selectBackgroundColor : model.normalBackgroundColor;
+    }
 }
 
 + (UIEdgeInsets)titleLabelPaddingInRoundView{
